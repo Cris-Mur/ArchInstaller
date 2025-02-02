@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+
+###############################################################################
+### Inclues - Constanst - Sources #############################################
+###############################################################################
+RESOURCE_DIRECTORY="rsrcs"
+SOURCE_DIRECTORY="src"
+source "$SOURCE_DIRECTORY/main_menu/splash-screen.sh"
+source "$SOURCE_DIRECTORY/main_menu/about.sh"
+RED='\033[0;31m'
+YELLOW='\033[0;33m'
+NC='\033[0m'
+
+###############################################################################
+### Functions & Utilities #####################################################
+###############################################################################
+pause(){
+    read -p "Presione ENTER para continuar...."
+    tput cuu1 && tput el ## Mueve el cursor para eliminar linea de pausa
+}
+
+archiso_checker() {
+    is_archiso="$(hostnamectl | grep -e "archiso" | wc -l)"
+    if [ ! "$is_archiso" -gt 0 ]; then
+        echo -e "${RED}ATENCION: Este script esta pensado para ser usado en un sistema de instalación de ARCH-LINUX"
+        echo -e "${NC}"
+        pause
+        exit 1
+    fi
+}
+
+access_to_installation_guide() {
+    if [ -f /usr/local/bin/Installation_guide ]; then
+        Installation_guide
+        return 0
+    else
+        clear
+        echo -e "${YELLOW}El programa de acceso a la guia NO esta disponible${NC}"
+        return 1
+    fi
+}
+
+terminal_font_setup() {
+    clear
+    echo -e "${YELLOW}Ahora la terminal pasará a usar la fuente ter-120b${NC}"
+    pause
+    BIG_FONT="ter-120b"
+    FIT_FONT="ter-v16n"
+
+    setfont $BIG_FONT
+}
+
+menu () {
+    while true; do
+        main_splash_screen
+        echo -e "$(cat "$RESOURCE_DIRECTORY/menu.txt")"
+        read -p "Seleccione una opción: " OPTION
+        
+        case $OPTION in
+            1) "$SOURCE_DIRECTORY/main_menu/pre-installation.sh" ;;
+            2) echo "op 2" ;;
+            3) echo "op 3" ;;
+            4) show_about ;;
+            5) access_to_installation_guide ;;
+            0) echo " ❌ Saliendo..."; return 0 ;;
+            *) echo "# ❌ Opción no válida. Intente de nuevo. ####" ;;
+        esac
+
+        alternative_splash_screen
+        read -p "Presione Enter para continuar..."
+        clear
+    done
+
+}
+###############################################################################
+### Script Run ################################################################
+###############################################################################
+clear
+archiso_checker
+terminal_font_setup
+clear
+main_splash_screen
+sleep 2
+show_about
+sleep 2
+alternative_splash_screen
+pause
+clear
+menu
+### EXIT STAGE
+clear
+pause
+setfont
+loadkeys us
