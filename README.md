@@ -2,6 +2,30 @@
 
 Este programa es una herramienta de instalación y configuración de Archlinux como sistema operativo, en una maquina X86-64, la idea es facilitar el proceso de instalación así como de presentar una interfaz amigable.
 
+ROAD MAP
+
+- [ ] Menu
+	- [x] Splash Screen
+	- [x] About
+	- [x] Advertencia de ejecución
+	- [x] Acceso a la guía de instalación
+	- [x] configuración de fuente
+		- [x] ter-120b
+	- [ ] Pre-Instalación
+		- [x] teclado
+			- [x] ENG
+			- [x] ES-LAT
+		- [x] Boot MODE
+			- [x] dmesg
+		- [x] Acceso a internet
+		- [x] Verificación de Reloj
+		- [x] Visibilidad de Dispositivos de almacenamiento
+		- [ ] verificación del sistema de archivos
+		- [ ] Montado de sistema de archivos
+	- [ ] Instalación
+	- [ ] Post-Instalación
+
+
 ## Arch BTW
 
 Archlinux es una distro de GNU-Linux, conocida por su comunidad, su wiki y especialmente por ser una distribución base. La principal característica de este tipo de distribuciones es la alta capacidad de configuración, debido a que estas distribuciones "out the box", se limitan a ser una de las formas mas minimistas de ejecutar el software del ecosistema GNU-Linux.
