@@ -1,0 +1,26 @@
+Este instalador esta hecho con \033[1;31mamor\033[0m para \033[1;33mfacilitar\033[0m la instalación de un
+\033[1;32mSistema Arch-Linux en una maquina X86-64\033[0m, brindando una interfaz explicativa y
+amigable con el usuario.
+
+Este instalador fue construido \033[1;35msiguiendo la guia de instalación que se encuentra
+en la pagina de la WIKI de Arch.\033[0m
+
+\033[1;32mhttps://wiki.archlinux.org/title/Installation_guide\033[0m
+
+por el momento se entiende que usted es un usuario con los conocimientos
+suficientes para comprender de fondo que es lo que este programa HACE.
+
+Aunque pretendo explicar de cierta manera la instalación...
+\033[1;31m
+NO SOY RESPONSABLE DE COMO ESTE PROGRAMA PUEDE AFECTAR A SU MAQUINA
+\033[0m
+Ya que yo hice este programa teniendo en cuenta las características propias de
+mis necesidades a la hora de instalar Arch como mi sistema. Así mismo se entiende
+que este programa será ejecutado en una versión LIMPIA de la ISO de instalación.
+
+Usted puede seguir los pasos previos a la instalación que son descritos en la
+guía, para garantizar que el programa funcione como es esperado, sin embargo
+este realiza algunos de los pasos de la pre-instalación.
+
+\033[1;32m💻 Autor\033[0m: \033[1;35m@\033[0m\033[1;33mCris-Mur\033[0m
+Versión: \033[1;32m0.1\033[0m
